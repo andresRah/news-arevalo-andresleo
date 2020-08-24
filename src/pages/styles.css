@@ -4,6 +4,11 @@
   margin-top: 20px;
   display: flex;
 }
+.logo .logo-min {
+  margin-left: 10px;
+  height: 28px;
+  width: 28px;
+}
 .logo-img {
   height: 28px;
   width: 28px;

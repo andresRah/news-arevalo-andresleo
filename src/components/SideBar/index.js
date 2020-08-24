@@ -18,11 +18,15 @@ export const SideBar = ({ collapsed }) => {
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="logo">
-        <Image src={noticias} alt="Logo" className="logo-img" />
+        <Image
+          src={noticias}
+          alt="Logo"
+          className={collapsed ? "logo-min" : "logo-img"}
+        />
         <Typography.Title
           level={4}
           style={{
-            visibility: collapsed ? "hidden" : "visible",
+            display: collapsed ? "none" : "flex",
             marginLeft: "10px",
           }}
         >
