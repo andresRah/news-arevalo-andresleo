@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Skeleton, Card, Typography, Image, Row, Tag, PageHeader } from "antd";
 
 import "./style.css";
@@ -6,13 +6,13 @@ import "./style.css";
 const { Paragraph } = Typography;
 
 export const CardNews = () => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const IconLink = ({ src, text }) => (
-    <a className="example-link">
-      <img className="example-link-icon" src={src} alt={text} />
+    <div className="example-link">
+      <Image className="example-link-icon" src={src} alt={text} />
       {text}
-    </a>
+    </div>
   );
 
   const content = (
@@ -24,7 +24,7 @@ export const CardNews = () => {
         </Paragraph>
       </div>
       <div>
-        <img
+        <Image
           style={{ marginBottom: "10px" }}
           src="https://www.infobae.com/new-resizer/icHNZM9y0PIk5insU7FBG2V1RkA=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/R5FNCYTQQ5GBPGN6AUYHMCLSIQ.jpg"
           alt="content"
@@ -51,7 +51,7 @@ export const CardNews = () => {
 
   return (
     <Card hoverable bodyStyle={{ margin: 0, padding: 0 }}>
-      <Skeleton loading={loading} avatar active>
+      <Skeleton loading={false} avatar active>
         <PageHeader
           title="Coronavirus en Tabasco: continúan los contagios con 192 nuevos casos y 11 fallecidos"
           avatar={{

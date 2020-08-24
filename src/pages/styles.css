@@ -1,9 +1,18 @@
 .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+  height: 40px;
+  margin-left: 15px;
+  margin-top: 20px;
+  display: flex;
+}
+.logo-img {
+  height: 28px;
+  width: 28px;
 }
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.ant-layout-sider {
+  background-color: #fff;
 }
