@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { Layout } from "antd";
 import { SideBar } from "../components/SideBar/index";
 import { HeaderBar } from "../components/HeaderBar/index";
 import { ListNews } from "../components/ListNews/index";
+import { getCurrentDate } from "../utils/date";
 
 const { Content } = Layout;
 
-export const Home = () => {
+export const Home = ({ onGetNews, news, hasError, isLoading }) => {
   const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    let currentDate = getCurrentDate();
+    onGetNews(currentDate);
+  }, []);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -27,7 +33,8 @@ export const Home = () => {
             minHeight: 800,
           }}
         >
-          <ListNews />
+          {isLoading ? <h1>Loading...</h1> : <ListNews news={news} />}
+          {hasError && <h1>Error loading data</h1>}
         </Content>
       </Layout>
     </Layout>

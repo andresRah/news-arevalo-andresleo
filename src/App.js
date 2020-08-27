@@ -1,6 +1,6 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Home } from "./pages/Home";
+import Home from "./containers/newsContainer";
 
 function App() {
   return <Home />;

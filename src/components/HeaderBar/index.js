@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Input, Row, Col } from "antd";
+import { Layout, Input, Row, Col } from "antd";
 
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./styles.css";

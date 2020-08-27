@@ -1,12 +1,15 @@
 import React from "react";
 import { Skeleton, Card, Typography, Image, Row, Tag, PageHeader } from "antd";
-
+import { formatDate } from "../../utils/date";
 import "./style.css";
 
 const { Paragraph } = Typography;
+const defaultImageURL =
+  "https://bloximages.newyork1.vip.townnews.com/wfmz.com/content/tncms/custom/image/b9818ac0-ee9a-11e9-8e9f-a3b831b71481.jpg";
 
-export const CardNews = () => {
+export const CardNews = ({ newInfo, isLoading }) => {
   // const [loading, setLoading] = useState(false);
+  const { category, date, img_url, source_name, title, url } = newInfo;
 
   const IconLink = ({ src, text }) => (
     <div className="example-link">
@@ -18,15 +21,15 @@ export const CardNews = () => {
   const content = (
     <>
       <div style={{ display: "flex", marginBottom: "10px" }}>
-        <Tag color="blue">Deportes</Tag>
+        <Tag color="blue">{category ? category : "Todas"}</Tag>
         <Paragraph class="ant-page-header-heading-sub-title">
-          24/4/2019 21:24:00
+          {formatDate(date)}
         </Paragraph>
       </div>
       <div>
         <Image
           style={{ marginBottom: "10px" }}
-          src="https://www.infobae.com/new-resizer/icHNZM9y0PIk5insU7FBG2V1RkA=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/R5FNCYTQQ5GBPGN6AUYHMCLSIQ.jpg"
+          src={img_url ? img_url : defaultImageURL}
           alt="content"
           width="100%"
         />
@@ -34,7 +37,7 @@ export const CardNews = () => {
       <div>
         <IconLink
           src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg"
-          text="Leer más en Clarin"
+          text={`Leer más en ${source_name}`}
         />
       </div>
     </>
@@ -53,7 +56,7 @@ export const CardNews = () => {
     <Card hoverable bodyStyle={{ margin: 0, padding: 0 }}>
       <Skeleton loading={false} avatar active>
         <PageHeader
-          title="Coronavirus en Tabasco: continúan los contagios con 192 nuevos casos y 11 fallecidos"
+          title={title}
           avatar={{
             src: "https://avatars1.githubusercontent.com/u/8186664?s=460&v=4",
           }}

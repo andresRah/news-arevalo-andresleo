@@ -1,0 +1,4 @@
+export const CLEAR_NEWS = "CLEAR_NEWS";
+export const LOADING_NEWS_IN_PROGRESS = "LOADING_NEWS_IN_PROGRESS";
+export const LOADING_SUCESS = "LOADING_NEWS_SUCCESS";
+export const ERROR = "ERROR";

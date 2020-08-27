@@ -2,27 +2,15 @@ import React from "react";
 import { Col, Row } from "antd";
 import { CardNews } from "../CardNews/index";
 
-export const ListNews = ({ ArrayNews }) => {
+export const ListNews = ({ news }) => {
   return (
     <Row gutter={[24, 24]}>
-      <Col span={12}>
-        <CardNews />
-      </Col>
-      <Col span={12}>
-        <CardNews />
-      </Col>
-      <Col span={12}>
-        <CardNews />
-      </Col>
-      <Col span={12}>
-        <CardNews />
-      </Col>
-      <Col span={12}>
-        <CardNews />
-      </Col>
-      <Col span={12}>
-        <CardNews />
-      </Col>
+      {news &&
+        news.slice(0, 30).map((newItem) => (
+          <Col className="gutter-row" span={12}>
+            <CardNews key={newItem.source_id} newInfo={newItem} />
+          </Col>
+        ))}
     </Row>
   );
 };
