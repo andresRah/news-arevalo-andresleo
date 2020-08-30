@@ -1,68 +1,63 @@
 import React from "react";
-import { Skeleton, Card, Typography, Image, Row, Tag, PageHeader } from "antd";
+import { Skeleton, Image, Tag, List, Avatar, Space } from "antd";
+import { LinkOutlined } from "@ant-design/icons";
 import { formatDate } from "../../utils/date";
 import "./style.css";
 
-const { Paragraph } = Typography;
-const defaultImageURL =
-  "https://bloximages.newyork1.vip.townnews.com/wfmz.com/content/tncms/custom/image/b9818ac0-ee9a-11e9-8e9f-a3b831b71481.jpg";
+const defaultImageURL = "https://image.flaticon.com/icons/svg/3076/3076074.svg";
+const avatarUrl = "https://image.flaticon.com/icons/svg/3075/3075976.svg";
 
 export const CardNews = ({ newInfo, isLoading }) => {
   const { category, date, img_url, source_name, title, url } = newInfo;
 
-  const IconLink = ({ src, text }) => (
-    <div className="example-link">
-      <Image className="example-link-icon" src={src} alt={text} />
+  const IconText = ({ icon, text }) => (
+    <Space>
+      {React.createElement(icon)}
       {text}
-    </div>
+    </Space>
   );
-
-  const content = (
-    <>
-      <div style={{ display: "flex", marginBottom: "10px" }}>
-        <Tag color="blue">{category ? category : "Todas"}</Tag>
-        <Paragraph class="ant-page-header-heading-sub-title">
-          {formatDate(date)}
-        </Paragraph>
-      </div>
-      <div>
-        <Image
-          style={{ marginBottom: "10px" }}
-          src={img_url ? img_url : defaultImageURL}
-          alt="content"
-          width="100%"
-        />
-      </div>
-      <div>
-        <IconLink
-          src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg"
-          text={`Leer más en ${source_name}`}
-        />
-      </div>
-    </>
-  );
-
-  const Content = ({ children, extraContent }) => {
-    return (
-      <Row>
-        <div style={{ flex: 1 }}>{children}</div>
-        <div className="image">{extraContent}</div>
-      </Row>
-    );
-  };
 
   return (
-    <Card hoverable bodyStyle={{ margin: 0, padding: 0 }}>
-      <Skeleton loading={isLoading} avatar active>
-        <PageHeader
-          title={title}
-          avatar={{
-            src: "https://avatars1.githubusercontent.com/u/8186664?s=460&v=4",
-          }}
-        >
-          <Content>{content}</Content>
-        </PageHeader>
+    <List.Item
+      key={title}
+      actions={[
+        <a href={url}>
+          <IconText
+            icon={LinkOutlined}
+            text={`Leer más en ${source_name}`}
+            key="list-vertical-star-o"
+          />
+        </a>,
+      ]}
+      extra={
+        isLoading ? (
+          <Skeleton.Image />
+        ) : (
+          <Image
+            width={272}
+            alt="logo"
+            src={img_url ? img_url : defaultImageURL}
+          />
+        )
+      }
+    >
+      <Skeleton avatar title={false} loading={isLoading} active>
+        <List.Item.Meta
+          avatar={<Avatar src={avatarUrl} />}
+          title={
+            <a href={url}>
+              <h1>{title}</h1>
+            </a>
+          }
+          description={
+            <div>
+              <Tag color="blue">{category ? category : "Todas"}</Tag>
+              {formatDate(date)}
+            </div>
+          }
+        />
+        {title}
       </Skeleton>
-    </Card>
+    </List.Item>
   );
 };

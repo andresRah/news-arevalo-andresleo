@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
-import { Layout, Empty, Typography } from "antd";
+import { Layout, Empty, message, Typography } from "antd";
 import { SideBar } from "../components/SideBar/index";
 import { HeaderBar } from "../components/HeaderBar/index";
 import { ListNews } from "../components/ListNews/index";
@@ -8,6 +8,7 @@ import { getCurrentDate } from "../utils/date";
 import { useParams } from "react-router-dom";
 
 const { Content } = Layout;
+
 const { Title } = Typography;
 
 export const Home = ({
@@ -60,18 +61,22 @@ export const Home = ({
             minHeight: 800,
           }}
         >
-          {/* {(hasError || !news || news.length === 0) && !isLoading && (
-            <Empty
-              imageStyle={{
-                verticalAlign: "middle",
-                height: 120,
-              }}
-              description={
-                <Title level={3}>No se encontraron resultados.</Title>
-              }
-            />
-          )} */}
-          <ListNews news={news} />
+          {hasError ? (
+            <>
+              {message.error("Se presento un error")}
+              <Empty
+                imageStyle={{
+                  verticalAlign: "middle",
+                  height: 120,
+                }}
+                description={
+                  <Title level={3}>No se encontraron resultados.</Title>
+                }
+              />
+            </>
+          ) : (
+            <ListNews news={news} isLoading={isLoading} />
+          )}
         </Content>
       </Layout>
     </Layout>
