@@ -8,7 +8,6 @@ const defaultImageURL =
   "https://bloximages.newyork1.vip.townnews.com/wfmz.com/content/tncms/custom/image/b9818ac0-ee9a-11e9-8e9f-a3b831b71481.jpg";
 
 export const CardNews = ({ newInfo, isLoading }) => {
-  // const [loading, setLoading] = useState(false);
   const { category, date, img_url, source_name, title, url } = newInfo;
 
   const IconLink = ({ src, text }) => (
@@ -54,7 +53,7 @@ export const CardNews = ({ newInfo, isLoading }) => {
 
   return (
     <Card hoverable bodyStyle={{ margin: 0, padding: 0 }}>
-      <Skeleton loading={false} avatar active>
+      <Skeleton loading={isLoading} avatar active>
         <PageHeader
           title={title}
           avatar={{

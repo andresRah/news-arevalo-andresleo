@@ -7,7 +7,11 @@ import "./styles.css";
 const { Header } = Layout;
 const { Search } = Input;
 
-export const HeaderBar = ({ collapsed, onClickToggle }) => {
+export const HeaderBar = ({ collapsed, onClickToggle, filterWord }) => {
+  const handleClickSearch = (inputValue) => {
+    filterWord(inputValue);
+  };
+
   return (
     <Header className="site-layout-background" style={{ padding: 0 }}>
       <Row>
@@ -23,17 +27,12 @@ export const HeaderBar = ({ collapsed, onClickToggle }) => {
         <Col span={6}>
           <Search
             placeholder="Buscar noticia..."
-            onSearch={(value) => console.log(value)}
+            onSearch={handleClickSearch}
             style={{ verticalAlign: "middle", paddingRight: "17px" }}
             enterButton
           />
         </Col>
       </Row>
-      {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu> */}
     </Header>
   );
 };

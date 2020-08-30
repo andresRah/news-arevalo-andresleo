@@ -45,3 +45,7 @@
   white-space: pre-wrap;
   line-height: 27px;
 }
+
+.ant-card-bordered-none {
+  border: none;
+}

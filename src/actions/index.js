@@ -4,6 +4,7 @@ import {
   LOADING_SUCESS,
   ERROR,
 } from "../types/newsTypes";
+import { API_BASE_URL } from "../utils/constants";
 
 export const loadingError = (bool) => ({
   type: ERROR,
@@ -26,22 +27,41 @@ export const clearNews = () => ({
 
 export const getNews = (currentDate) => {
   return (dispatch) => {
-    dispatch(clearNews());
-    dispatch(loadingError(false));
-    dispatch(loadingInProgress(true));
-
-    fetch(`https://api.canillitapp.com/latest/${currentDate}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-
-        dispatch(loadingInProgress(false));
-
-        return response;
-      })
-      .then((response) => response.json())
-      .then((news) => dispatch(loadingSuccess(news)))
-      .catch(() => dispatch(loadingError(true)));
+    const url = `${API_BASE_URL}/latest/${currentDate}`;
+    requestNews(dispatch, url);
   };
+};
+
+export const getNewsByCategory = (categoryId) => {
+  return (dispatch) => {
+    const url = `${API_BASE_URL}/news/category/${categoryId}`;
+    requestNews(dispatch, url);
+  };
+};
+
+export const getNewsByFilterWord = (searchWord) => {
+  return (dispatch) => {
+    const url = `${API_BASE_URL}/search/${searchWord}`;
+    requestNews(dispatch, url);
+  };
+};
+
+const requestNews = (dispatch, url) => {
+  dispatch(clearNews());
+  dispatch(loadingError(false));
+  dispatch(loadingInProgress(true));
+
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+
+      dispatch(loadingInProgress(false));
+
+      return response;
+    })
+    .then((response) => response.json())
+    .then((news) => dispatch(loadingSuccess(news)))
+    .catch(() => dispatch(loadingError(true)));
 };

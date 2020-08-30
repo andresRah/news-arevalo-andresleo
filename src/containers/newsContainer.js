@@ -1,5 +1,10 @@
 import { connect } from "react-redux";
-import { getNews, clearNews } from "../actions";
+import {
+  getNews,
+  getNewsByCategory,
+  getNewsByFilterWord,
+  clearNews,
+} from "../actions";
 import { Home } from "../pages/Home";
 
 // Redux state to props
@@ -12,6 +17,8 @@ const mapStateToProps = (state) => ({
 // Actions to props
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onGetNews: (currentDate) => dispatch(getNews(currentDate)),
+  onGetNewsByCategory: (categoryId) => dispatch(getNewsByCategory(categoryId)),
+  onGetNewsByFilterWord: (word) => dispatch(getNewsByFilterWord(word)),
   onClearNews: () => dispatch(clearNews()),
 });
 

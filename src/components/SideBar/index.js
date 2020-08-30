@@ -9,6 +9,7 @@ import {
   SmileTwoTone,
   StarTwoTone,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 import noticias from "../../avion.png";
 
@@ -36,25 +37,25 @@ export const SideBar = ({ collapsed }) => {
 
       <Menu mode="inline" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1" icon={<HomeTwoTone />}>
-          Home
+          <Link to="/home">Home</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<HourglassTwoTone />}>
-          Politica
+          <Link to="/category/1">Politica</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<DollarCircleTwoTone />}>
-          Internacional
+          <Link to="/category/2">Internacional</Link>
         </Menu.Item>
         <Menu.Item key="4" icon={<RocketTwoTone />}>
-          Tecnologia
+          <Link to="/category/3">Tecnologia</Link>
         </Menu.Item>
         <Menu.Item key="5" icon={<StarTwoTone />}>
-          Espectaculos
+          <Link to="/category/4">Espectaculos</Link>
         </Menu.Item>
         <Menu.Item key="6" icon={<TrophyTwoTone />}>
-          Deportes
+          <Link to="/category/5">Deportes</Link>
         </Menu.Item>
         <Menu.Item key="7" icon={<SmileTwoTone />}>
-          Diseño
+          <Link to="/category/6">Diseño</Link>
         </Menu.Item>
       </Menu>
     </Sider>
