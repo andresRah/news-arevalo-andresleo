@@ -10,7 +10,7 @@ import {
   StarTwoTone,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-
+import "./styles.css";
 import noticias from "../../avion.png";
 
 const { Sider } = Layout;

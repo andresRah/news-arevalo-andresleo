@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./styles.css";
 import { Layout, Empty, message, Typography } from "antd";
 import { SideBar } from "../components/SideBar/index";
@@ -22,18 +22,18 @@ export const Home = ({
   const [collapsed, setCollapsed] = useState(false);
   let { id } = useParams();
 
-  useEffect(() => {
-    GetNewsByDate(onGetNews);
-  }, []);
-
-  useEffect(() => {
+  const onGetNewsCallback = useCallback(() => {
     if (id) {
       onGetNewsByCategory(id);
       return;
     }
 
     GetNewsByDate(onGetNews);
-  }, [id]);
+  }, [id, onGetNews]);
+
+  useEffect(() => {
+    onGetNewsCallback();
+  }, [onGetNewsCallback]);
 
   const GetNewsByDate = (onGetNews) => {
     let currentDate = getCurrentDate();

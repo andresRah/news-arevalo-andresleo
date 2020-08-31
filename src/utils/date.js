@@ -9,14 +9,10 @@ export const getCurrentDate = () => {
   return today;
 };
 
-export const formatDate = (date) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "America/Bogota",
-  };
-  let newDate = new Date(date).toLocaleString("es-CO", options);
-  return newDate;
+export const formatDate = (milliseconds) => {
+  let d = new Date(milliseconds * 1000);
+  let currentDate = d.toLocaleDateString();
+  let currentTime = d.toLocaleTimeString();
+
+  return `${currentDate} ${currentTime}`;
 };
