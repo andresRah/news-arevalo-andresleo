@@ -25,7 +25,6 @@ export const ListNews = ({ news, isLoading }) => {
       pagination={{
         onChange: (page) => {
           //isLoading = true;
-          console.log(page);
         },
         pageSize: 10,
       }}
