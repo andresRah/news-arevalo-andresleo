@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/news-arevalo-andresleo/precache-manifest.3f6f941ccf60a3c224953d02db1e3c50.js"
+  "/news-arevalo-andresleo/precache-manifest.9d1afc37443c71a8c02d2ae06cf9dccd.js"
 );
 
 self.addEventListener('message', (event) => {

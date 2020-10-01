@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/news-arevalo-andresleo/static/css/main.a9fd75d4.chunk.css",
-    "main.js": "/news-arevalo-andresleo/static/js/main.5edd119b.chunk.js",
-    "main.js.map": "/news-arevalo-andresleo/static/js/main.5edd119b.chunk.js.map",
+    "main.js": "/news-arevalo-andresleo/static/js/main.1955e652.chunk.js",
+    "main.js.map": "/news-arevalo-andresleo/static/js/main.1955e652.chunk.js.map",
     "runtime-main.js": "/news-arevalo-andresleo/static/js/runtime-main.cf583360.js",
     "runtime-main.js.map": "/news-arevalo-andresleo/static/js/runtime-main.cf583360.js.map",
     "static/css/2.97ca6098.chunk.css": "/news-arevalo-andresleo/static/css/2.97ca6098.chunk.css",
-    "static/js/2.9b29ff83.chunk.js": "/news-arevalo-andresleo/static/js/2.9b29ff83.chunk.js",
-    "static/js/2.9b29ff83.chunk.js.map": "/news-arevalo-andresleo/static/js/2.9b29ff83.chunk.js.map",
+    "static/js/2.eb4ce25f.chunk.js": "/news-arevalo-andresleo/static/js/2.eb4ce25f.chunk.js",
+    "static/js/2.eb4ce25f.chunk.js.map": "/news-arevalo-andresleo/static/js/2.eb4ce25f.chunk.js.map",
     "index.html": "/news-arevalo-andresleo/index.html",
-    "precache-manifest.3f6f941ccf60a3c224953d02db1e3c50.js": "/news-arevalo-andresleo/precache-manifest.3f6f941ccf60a3c224953d02db1e3c50.js",
+    "precache-manifest.9d1afc37443c71a8c02d2ae06cf9dccd.js": "/news-arevalo-andresleo/precache-manifest.9d1afc37443c71a8c02d2ae06cf9dccd.js",
     "service-worker.js": "/news-arevalo-andresleo/service-worker.js",
     "static/css/2.97ca6098.chunk.css.map": "/news-arevalo-andresleo/static/css/2.97ca6098.chunk.css.map",
     "static/css/main.a9fd75d4.chunk.css.map": "/news-arevalo-andresleo/static/css/main.a9fd75d4.chunk.css.map",
-    "static/js/2.9b29ff83.chunk.js.LICENSE.txt": "/news-arevalo-andresleo/static/js/2.9b29ff83.chunk.js.LICENSE.txt",
+    "static/js/2.eb4ce25f.chunk.js.LICENSE.txt": "/news-arevalo-andresleo/static/js/2.eb4ce25f.chunk.js.LICENSE.txt",
     "static/media/avion.png": "/news-arevalo-andresleo/static/media/avion.69accbef.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cf583360.js",
     "static/css/2.97ca6098.chunk.css",
-    "static/js/2.9b29ff83.chunk.js",
+    "static/js/2.eb4ce25f.chunk.js",
     "static/css/main.a9fd75d4.chunk.css",
-    "static/js/main.5edd119b.chunk.js"
+    "static/js/main.1955e652.chunk.js"
   ]
 }

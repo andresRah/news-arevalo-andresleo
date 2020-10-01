@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9ebe048d77e10fd52034a48320dc155f",
+    "revision": "bca1ffdb0839f06e7719fd66c151c992",
     "url": "/news-arevalo-andresleo/index.html"
   },
   {
-    "revision": "323e083764d9c5d26632",
+    "revision": "47ac7cff28b37130ff5a",
     "url": "/news-arevalo-andresleo/static/css/2.97ca6098.chunk.css"
   },
   {
-    "revision": "8a5d0eaccc39a442b0af",
+    "revision": "815e770630daae5712df",
     "url": "/news-arevalo-andresleo/static/css/main.a9fd75d4.chunk.css"
   },
   {
-    "revision": "323e083764d9c5d26632",
-    "url": "/news-arevalo-andresleo/static/js/2.9b29ff83.chunk.js"
+    "revision": "47ac7cff28b37130ff5a",
+    "url": "/news-arevalo-andresleo/static/js/2.eb4ce25f.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/news-arevalo-andresleo/static/js/2.9b29ff83.chunk.js.LICENSE.txt"
+    "url": "/news-arevalo-andresleo/static/js/2.eb4ce25f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8a5d0eaccc39a442b0af",
-    "url": "/news-arevalo-andresleo/static/js/main.5edd119b.chunk.js"
+    "revision": "815e770630daae5712df",
+    "url": "/news-arevalo-andresleo/static/js/main.1955e652.chunk.js"
   },
   {
     "revision": "fc81381c7ed4a7fc29af",
